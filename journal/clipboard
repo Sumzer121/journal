@@ -1,0 +1,43 @@
+def process_feedback(feedback, sentiment):
+    empathetic_responses = {
+        "positive": [
+            "That's wonderful to hear!",
+            "Congratulations on your positive experience!",
+            "It sounds like things are going well for you.",
+            "I'm happy for you!",
+            "Keep up the good work!",
+        ],
+        "neutral": [
+            "Thanks for sharing.",
+            "It's good to hear your thoughts.",
+            "Your perspective is valuable.",
+            "Every experience is meaningful in its own way.",
+            "It's okay to have mixed feelings about things.",
+        ],
+        "negative": [
+            "I'm sorry to hear that you're going through a tough time.",
+            "It sounds like you're dealing with a challenging situation.",
+            "It's okay to feel the way you do. Many people go through similar experiences.",
+            "I understand that this must be hard for you.",
+            "You're not alone. We're here to support you.",
+        ],
+    }
+
+    general_tips = [
+        "Remember to take care of yourself and prioritize your well-being.",
+        "Consider talking to someone you trust about your feelings.",
+        "Take things one step at a time and focus on what you can control.",
+        "Practice self-compassion and be kind to yourself.",
+        "Explore activities that bring you joy and relaxation.",
+    ]
+
+    if sentiment in empathetic_responses:
+        selected_responses = empathetic_responses[sentiment]
+    else:
+        selected_responses = empathetic_responses["neutral"]
+
+    empathetic_response = random.choice(selected_responses)
+    tip = random.choice(general_tips)
+
+    feedback = f"{empathetic_response} Here's a tip that might help: {tip}"
+    return feedback

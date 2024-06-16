@@ -1,0 +1,20 @@
+<!-- entry_detail.html inside your templates/entries/ directory -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Entry</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'entries/style.css' %}">
+</head>
+<body>
+    <h1>{{ entry.title }}</h1>
+    <p>{{ entry.content }}</p>
+    <p>Created at: {{ entry.created_at|date:'l, jS F Y' }} {{ entry.created_at|time:'H:i:s' }}</p>
+
+    <!-- Display feedback -->
+    <h2>Feedback</h2>
+    <p>{{ feedback }}</p>
+</body>
+</html>
