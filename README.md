@@ -1,130 +1,47 @@
-# Journal Application
+# Journal App
 
-This is a Django-based journal application where users can create and manage journal entries. The application also integrates a language model to provide feedback on journal entries.
-
-## Table of Contents
-
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Dependencies](#dependencies)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Features
-
-- User authentication (login and registration)
-- Create, view, and list journal entries
-- Generate and display feedback for each journal entry using a language model
+## Project Overview
+This project is designed to allow users to input their daily journal entries. The LLAMA AI Model analyzes these entries to provide constructive and helpful feedback, aimed at improving the user's mental state.
 
 ## Installation
+1. Clone the repository:
+   ```
+   git clone https://github.com/Sumzer121/journal.git
+   cd journal
+   ```
 
-1. **Clone the repository**
+2. Install dependencies using Pipenv:
+   ```
+   pipenv install
+   ```
 
-    ```bash
-    git clone https://github.com/yourusername/journal-app.git
-    cd journal-app
-    ```
+## Setup
+1. Create a `.env` file in the root directory of your project with the following content:
+   ```
+   SECRET_KEY=your_secret_key_here
+   DEBUG=True
+   ```
 
-2. **Create a virtual environment**
-
-    ```bash
-    python -m venv env
-    source env/bin/activate  # On Windows use `env\Scripts\activate`
-    ```
-
-3. **Install dependencies**
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. **Set up the database**
-
-    ```bash
-    python manage.py migrate
-    ```
-
-5. **Create a superuser**
-
-    ```bash
-    python manage.py createsuperuser
-    ```
-
-6. **Run the development server**
-
-    ```bash
-    python manage.py runserver
-    ```
+2. Apply database migrations:
+   ```
+   python manage.py migrate
+   ```
 
 ## Usage
+1. Run the development server:
+   ```
+   python manage.py runserver
+   ```
 
-1. **Access the application**
-
-    Open your web browser and go to `http://127.0.0.1:8000`.
-
-2. **Register and log in**
-
-    Register a new user or log in with an existing user.
-
-3. **Create journal entries**
-
-    Navigate to the journal entry creation page, fill out the form, and submit to create a new journal entry.
-
-4. **View feedback**
-
-    After creating a journal entry, you will see the generated feedback displayed on the entry detail page.
-
-## Project Structure
-
-```
-journal-app/
-├── entries/
-│   ├── migrations/
-│   ├── templates/
-│   │   └── entries/
-│   │       ├── entry_detail.html
-│   │       ├── list.html
-│   │       └── ...
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── apps.py
-│   ├── forms.py
-│   ├── models.py
-│   ├── tests.py
-│   └── views.py
-├── journal/
-│   ├── __init__.py
-│   ├── asgi.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-├── manage.py
-├── requirements.txt
-└── README.md
-```
+2. Access the application at `http://127.0.0.1:8000/` in your web browser.
 
 ## Dependencies
-
-- Django
-- djangorestframework
-- ollama
-- torch
-
-Ensure you have all the dependencies installed by running:
-
-```bash
-pip install -r requirements.txt
-```
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any changes or improvements.
-
-## License
-
-This project is licensed under the MIT License.
-```
-
-Feel free to modify any sections as per your project specifics, like adding more detailed instructions, additional dependencies, or more information about usage and features.
+- Django: Framework for building web applications in Python.
+- TextBlob: Library for processing textual data.
+- OpenAI: API for AI models.
+- Transformers: Library for Natural Language Processing (NLP) tasks.
+- TensorFlow: Framework for machine learning.
+- Torch: Machine learning library.
+- Accelerate: PyTorch extension library.
+- wget: Command-line utility for downloading files.
+- OLLAMA: AI Model for analyzing text and providing feedback.
